@@ -24,6 +24,17 @@ export interface CurriculumNode {
 }
 
 export interface ChaosState {
-  enabled: boolean;
-  type: 'address_in_use' | 'connection_refused' | 'timeout' | null;
+  enabled?: boolean;
+  type?: 'address_in_use' | 'connection_refused' | 'timeout' | null;
+  latency?: boolean;
+  invalidApiKey?: boolean;
+  corruptUri?: boolean;
+}
+
+export interface ExecutionStep {
+  id: string;
+  agent: string;
+  action: string;
+  payload: any;
+  status: 'pending' | 'running' | 'success' | 'error';
 }

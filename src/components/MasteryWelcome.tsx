@@ -129,7 +129,9 @@ export default function MasteryWelcome({ setActiveTab }: { setActiveTab: (tab: A
           <div className="bg-[#111116] border border-white/5 rounded-2xl p-6 shadow-xl">
             <h3 className="text-sm font-bold text-slate-300 uppercase tracking-widest mb-4">Domain Scores</h3>
             <div className="flex flex-col gap-3">
-              {Object.entries(mastery.domainScores).map(([key, score]) => (
+              {Object.entries(mastery.domainScores).map(([key, val]) => {
+                const score = val as number;
+                return (
                 <div key={key}>
                   <div className="flex justify-between text-xs mb-1">
                     <span className="text-slate-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
@@ -139,7 +141,8 @@ export default function MasteryWelcome({ setActiveTab }: { setActiveTab: (tab: A
                     <div className={`h-full rounded-full ${score >= 80 ? 'bg-emerald-400' : score >= 50 ? 'bg-amber-400' : 'bg-slate-600'}`} style={{ width: `${score}%` }} />
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

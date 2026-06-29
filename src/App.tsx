@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { 
   BookOpen, Code2, Cpu, GraduationCap, ExternalLink, HelpCircle, ShieldCheck, 
   Shield, Calendar, CheckSquare, Sparkles, Network, Server, Target, Layers, 
-  Bot, Box, GitMerge
+  Bot, Box, GitMerge, ShieldAlert
 } from 'lucide-react';
 import GuideTab from './components/GuideTab';
 import FoundrySdkTab from './components/FoundrySdkTab';
